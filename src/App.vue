@@ -49,8 +49,20 @@
     </section>
     <aside class="main-sidebar">
       <div class="social-block">
-        <h3>Socials</h3>
-        <small>Привяжите учетную запись социальной сети и используйте ee для входа</small>
+        <h3 class="social-block__heading">Socials</h3>
+        <small class="social-block__sub-heading">Link your social network account to use as login</small>
+        <a href="#facebook" class="social-block__item social-block__item_fb">
+          <span class="social-block__icon social-block__icon_fb"></span>Facebook
+        </a>
+        <a href="#vkontakte" class="social-block__item social-block__item_vk">
+          <span class="social-block__icon social-block__icon_vk"></span>Вконтакте
+        </a>
+        <a href="#twitter" class="social-block__item social-block__item_tw">
+          <span class="social-block__icon social-block__icon_tw"></span>Twitter
+        </a>
+        <a href="#ok" class="social-block__item social-block__item_ok">
+          <span class="social-block__icon social-block__icon_ok"></span>Одноклассники
+        </a>
       </div>
     </aside>
   </div>
@@ -120,12 +132,16 @@
   }
 
   h3{
+    margin: 0;
     font-size: 14px;
-    margin: 0px;
   }
 
   input, button{
     outline-color: #e5e5e5;
+  }
+
+  small {
+    font-size: 12px;
   }
 
   .btn-holder{
@@ -139,7 +155,7 @@
   .main-section{
     display: flex;
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 920px;
     margin: 0 auto;
   }
   .main-content{
@@ -232,6 +248,114 @@
   }
 
   .social-block{
+    margin-top: 50px;
+    padding: 20px;
     background-color: #fff6e0;
+
+    &__heading{
+      margin-bottom: 16px;
+    }
+
+    &__sub-heading {
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    &__item{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      
+      font-size: 12px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #e5e5e5;
+
+      &_fb{
+        background-color: #1d59a3;
+      }
+      &_vk{
+        background-color: #1c608d;
+      }
+      &_tw{
+        background-color: #00b2e6;
+      }
+      &_ok{
+        background-color: #ef7800;
+      }
+    }
+    &__icon{
+      width: 24px;
+      height: 20px;
+      margin: 0 10px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &_fb{
+        background-image: url(./assets/img/fb.png);
+      }
+      &_vk{
+        background-image: url(./assets/img/vk.png);
+      }
+      &_tw{
+        background-image: url(./assets/img/tw.png);
+      }
+      &_ok{
+        background-image: url(./assets/img/ok.png);
+      }
+    }    
+  }
+
+  @media screen and (max-width: 900px){
+    .main-section{
+      max-width: 900px;
+      padding: 0px 10px;
+    }
+
+    .main-content{
+      width: 60%;
+    }  
+    .main-sidebar{
+      width: 35%;
+    }
+
+    .data-field__input {
+      width: 65%;
+    }
+  }
+
+  @media screen and (max-width: 560px){
+    .main-section{
+      flex-direction: column;
+      max-width: 460px;
+      padding: 0px 10px;
+    }
+
+    .main-content{
+      margin-bottom: 20px;
+    }
+    .main-content,
+    .main-sidebar{
+      width: 100%;
+    }
+
+    .social-block{
+      margin: 0 auto;
+      max-width: 360px;
+    }
+
+    
+  }
+  @media screen and (max-width: 360px){
+    h1,h2,h3{
+      text-align: center;
+    }
+
+    .notification-block__label{
+      justify-content: center;
+    }  
   }
 </style>

@@ -140,7 +140,7 @@ export default{
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .address-book{
     transition: all 300ms ease-in;
 
@@ -232,5 +232,17 @@ export default{
         background-color: #cdc9c7;
       }
     }
+  }
+
+  @media screen and (max-width: 360px){
+    .address-book__input-holder{
+      flex-direction: column;
+    }
+    .address-book__input{
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
   }
 </style>
